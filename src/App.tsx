@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import QuestionCard from './component/QuestionCard';
 import { fetchQuizQuestions } from './API';
 import { QuestionState, Difficulty } from './API';
- import { GlobalStyle } from './App.style';
+ import { GlobalStyle, Wrapper } from './App.style';
 
  export type AnswerObject ={
   question:string;
@@ -69,7 +69,7 @@ correctAnswer: questions[number].correct_answer,
   return (
     <>
     <GlobalStyle/>
-    <div className="App">
+    <Wrapper>
       <h1>React Quiz</h1>
       {gameOver || userAnswers.length === TOTATAL_QUESTION ? (
         < button className='start' onClick={startTrivia}>
@@ -95,7 +95,7 @@ correctAnswer: questions[number].correct_answer,
         
         ): null}
 
-    </div>
+    </Wrapper>
         </>
   );
 }

@@ -43,12 +43,13 @@ export const Wrapper = styled.div`
     font-weight: 400;
     background-size: 100%;
     background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-background-clip: text;
-    -moz-text-fill-color: transparent;
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     -moz-background-clip: text;
+     -moz-text-fill-color: transparent;
     filter: drop-shadow(2px 2px #0085a3);
     font-size: 70px;
+    font-weight:400
     text-align: center;
     margin: 20px;
   }
