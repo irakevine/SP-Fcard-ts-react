@@ -48,8 +48,8 @@ console.log(questions);
       </button>
       ):null}
       
-      <p className='score'> score:</p>
-      <p>Loading Questions ...</p>
+      {!gameOver ?<p className='score'> score:</p> : null}
+      {loading && <p>Loading Questions ...</p>}
       {/* <QuestionCard  
        questionNumber={number+1}
        totalQuestion={TOTATAL_QUESTION}
