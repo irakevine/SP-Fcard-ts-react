@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-// import QuestionCard from './component/QuestionCard';
+import QuestionCard from './component/QuestionCard';
 
 import { fetchQuizQuestions } from './API';
 import { QuestionState, Difficulty } from './API';
@@ -50,15 +50,21 @@ console.log(questions);
       
       {!gameOver ?<p className='score'> score:</p> : null}
       {loading && <p>Loading Questions ...</p>}
-      {/* <QuestionCard  
+      {!loading && !gameOver && (
+      <QuestionCard  
        questionNumber={number+1}
        totalQuestion={TOTATAL_QUESTION}
        question={questions[number].question}
        answers={questions[number].answers}
        userAnswer= {userAnswers ? userAnswers[number]: undefined}
        callback={checkAnswer}
-      /> */}
-      <button className='next' onClick={nextQuestion}> Next Question</button>
+      />
+      )}
+      {!loading && !gameOver && userAnswers.length === number + 1 && number !== TOTATAL_QUESTION - 1?(
+        
+        <button className='next' onClick={nextQuestion}> Next Question</button>
+
+      ): null}
 
     </div>
   );
