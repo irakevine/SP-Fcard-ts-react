@@ -42,9 +42,12 @@ console.log(questions);
   return (
     <div className="App">
       <h1>React Quiz</h1>
-      <button className='start' onClick={startTrivia}>
+      {gameOver || userAnswers.length === TOTATAL_QUESTION ? (
+       < button className='start' onClick={startTrivia}>
         start
       </button>
+      ):null}
+      
       <p className='score'> score:</p>
       <p>Loading Questions ...</p>
       {/* <QuestionCard  
