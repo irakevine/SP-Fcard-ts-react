@@ -3,7 +3,8 @@ import React, {useState} from 'react';
 
 import { fetchQuizQuestions } from './API';
 import { Difficulty } from './API';
-const TOTATAL_QUESTION= 10
+ 
+const TOTATAL_QUESTION = 10;
 const App = () => {
   const [loading,setLoading] = useState(false)
   const[questions, setQuestions ] =useState([])
