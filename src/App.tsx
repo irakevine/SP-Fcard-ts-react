@@ -2,9 +2,9 @@ import React, {useState} from 'react';
 import QuestionCard from './component/QuestionCard';
 import { fetchQuizQuestions } from './API';
 import { QuestionState, Difficulty } from './API';
- 
+ import { GlobalStyle } from './App.style';
 
-type AnswerObject ={
+ export type AnswerObject ={
   question:string;
   answer:string;
   correct:boolean
@@ -67,33 +67,36 @@ correctAnswer: questions[number].correct_answer,
   }
 
   return (
+    <>
+    <GlobalStyle/>
     <div className="App">
       <h1>React Quiz</h1>
       {gameOver || userAnswers.length === TOTATAL_QUESTION ? (
-       < button className='start' onClick={startTrivia}>
+        < button className='start' onClick={startTrivia}>
         start
       </button>
       ):null}
       
-      {!gameOver ?<p className='score'> score:</p> : null}
+      {!gameOver ?<p className='score'> score: {score}</p> : null}
       {loading && <p>Loading Questions ...</p>}
       {!loading && !gameOver && (
-      <QuestionCard  
-       questionNumber={number+1}
-       totalQuestion={TOTATAL_QUESTION}
-       question={questions[number].question}
-       answers={questions[number].answers}
-       userAnswer= {userAnswers ? userAnswers[number]: undefined}
-       callback={checkAnswer}
-      />
-      )}
+        <QuestionCard  
+        questionNumber={number+1}
+        totalQuestion={TOTATAL_QUESTION}
+        question={questions[number].question}
+        answers={questions[number].answers}
+        userAnswer= {userAnswers ? userAnswers[number]: undefined}
+        callback={checkAnswer}
+        />
+        )}
       {!loading && !gameOver && userAnswers.length === number + 1 && number !== TOTATAL_QUESTION - 1?(
         
         <button className='next' onClick={nextQuestion}> Next Question</button>
-
-      ): null}
+        
+        ): null}
 
     </div>
+        </>
   );
 }
 
