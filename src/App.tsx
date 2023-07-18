@@ -19,7 +19,7 @@ const App = () => {
   const [ userAnswers , setUserAnswers] = useState<AnswerObject[]>([])
   const [ score, setScore] = useState(0)
   const [ gameOver, setGameOver] = useState(true)
-console.log(fetchQuizQuestions(TOTATAL_QUESTION, Difficulty.EASY));
+console.log(questions);
 
   const startTrivia = async ()=>{
     setLoading (true)
