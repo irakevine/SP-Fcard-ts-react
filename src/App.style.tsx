@@ -1,6 +1,6 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from "styled-components";
 //@ts-ignore
-import BGImage from './images/natu.jpg';
+import BGImage from "./images/natu.jpg";
 
 export const GlobalStyle = createGlobalStyle`
   html {
