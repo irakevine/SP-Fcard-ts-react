@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { fetchQuizQuestions } from './API';
+import React, { useState } from "react";
+import { fetchQuizQuestions } from "./API";
 // Components
-import QuestionCard from './component/QuestionCard';
+import QuestionCard from "./component/QuestionCard";
 // types
-import { QuestionsState, Difficulty } from './API';
+import { QuestionsState, Difficulty } from "./API";
 // Styles
-import { GlobalStyle, Wrapper } from './App.style';
+import { GlobalStyle, Wrapper } from "./App.style";
 
 export type AnswerObject = {
   question: string;
@@ -74,11 +74,11 @@ const App: React.FC = () => {
       <Wrapper>
         <h1>Next QUIZ</h1>
         {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
-          <button className='start' onClick={startTrivia}>
+          <button className="start" onClick={startTrivia}>
             Start
           </button>
         ) : null}
-        {!gameOver ? <p className='score'>Score: {score}</p> : null}
+        {!gameOver ? <p className="score">Score: {score}</p> : null}
         {loading ? <p>Loading Questions...</p> : null}
         {!loading && !gameOver && (
           <QuestionCard
@@ -90,8 +90,11 @@ const App: React.FC = () => {
             callback={checkAnswer}
           />
         )}
-        {!gameOver && !loading && userAnswers.length === number + 1 && number !== TOTAL_QUESTIONS - 1 ? (
-          <button className='next' onClick={nextQuestion}>
+        {!gameOver &&
+        !loading &&
+        userAnswers.length === number + 1 &&
+        number !== TOTAL_QUESTIONS - 1 ? (
+          <button className="next" onClick={nextQuestion}>
             Next Question
           </button>
         ) : null}
