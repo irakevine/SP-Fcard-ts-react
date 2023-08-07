@@ -40,3 +40,5 @@ const QuestionCard: React.FC<Props> = ({
   </Wrapper>
 );
 export default QuestionCard;
+
+// ex
