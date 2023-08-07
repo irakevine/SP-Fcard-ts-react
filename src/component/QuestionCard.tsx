@@ -41,4 +41,4 @@ const QuestionCard: React.FC<Props> = ({
 );
 export default QuestionCard;
 
-// export
+// export QuestionCard
